@@ -63,6 +63,19 @@ M.incsearch = function(config)
 end
 
 M.match_all = function(config)
+  ------------------------
+  -- Check Buffer
+  
+  local currentBuffer = vim.fn.expand('%')
+
+  if currentBuffer == "Term" then
+    vim.cmd 'exe "normal \\<C-W>k"'
+  elseif currentBuffer == "NvimTree" then
+    vim.cmd 'exe "normal \\<C-W>l"'
+  else
+    print("a")
+  end
+  -------------------------
   local search_opts = merge(search_defaults, config)
 
   if not user_opts then
@@ -83,6 +96,9 @@ M.simple = function(config)
 end
 
 M.replace = function(config)
+  -----------------------------
+  -- Check Buffer
+  
   local currentBuffer = vim.fn.expand('%')
 
   if currentBuffer == "Term" then
@@ -92,6 +108,7 @@ M.replace = function(config)
   else
     print("a")
   end
+  -----------------------------
   
   if not user_opts then
     M.setup({})
