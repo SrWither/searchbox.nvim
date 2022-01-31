@@ -37,7 +37,7 @@ local get_row = function()
   local height = vim.fn.winheight(0)
   local diff_start = cursor_line - first_line
 
-  local remaining_space = height - (diff_start + 1)
+  local remaining_space = height - (diff_start)
 
   if remaining_space < 9 then
     return fold.up
