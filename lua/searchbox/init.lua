@@ -1,14 +1,3 @@
-local currentBuffer = vim.fn.expand('%')
-
-if currentBuffer == "Term" then
-  vim.cmd 'exe "normal \\<C-W>k"'
-elseif currentBuffer == "NvimTree" then
-  vim.cmd 'exe "normal \\<C-W>l"'
-else
-  print("a")
-end
-
-
 local M = {}
 
 local utils = require('searchbox.utils')
@@ -94,6 +83,16 @@ M.simple = function(config)
 end
 
 M.replace = function(config)
+  local currentBuffer = vim.fn.expand('%')
+
+  if currentBuffer == "Term" then
+    vim.cmd 'exe "normal \\<C-W>k"'
+  elseif currentBuffer == "NvimTree" then
+    vim.cmd 'exe "normal \\<C-W>l"'
+  else
+    print("a")
+  end
+  
   if not user_opts then
     M.setup({})
   end
