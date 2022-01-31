@@ -1,14 +1,3 @@
--- Check Buffer
-local currentBuffer = vim.fn.expand('%')
-
-if currentBuffer == "Term" then
-  vim.cmd 'exe "normal \\<C-W>k"'
-elseif currentBuffer == "NvimTree" then
-  vim.cmd 'exe "normal \\<C-W>l"'
-else
-  print("a")
-end
-
 local M = {}
 local Menu = require('nui.menu')
 local event = require('nui.utils.autocmd').event
