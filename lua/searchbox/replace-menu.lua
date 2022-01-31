@@ -77,8 +77,9 @@ M.confirm_action = function(handlers)
       handlers.on_submit(item)
     end,
   })
-
+  
   menu:mount()
+  vim.cmd ":stopinsert"
 
   function map(lhs, rhs)
     vim.api.nvim_buf_set_keymap(
