@@ -37,14 +37,13 @@ local get_row = function()
   local height = vim.fn.winheight(0)
   local diff_start = cursor_line - first_line
 
-  -- local remaining_space = height - (diff_start + 1)
-  local remaining_space = diff_start
+  --local remaining_space = height - (diff_start + 1)
 
-  if remaining_space < 9 then
-    return fold.up
-  end
+  -- if remaining_space < 9 then
+    -- return fold.up
+  -- end
 
-  return fold.down
+  -- return fold.down
 end
 
 M.confirm_action = function(handlers)
