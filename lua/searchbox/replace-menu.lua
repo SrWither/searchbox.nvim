@@ -39,11 +39,11 @@ local get_row = function()
 
   local remaining_space = height - (diff_start + 1)
 
-   if remaining_space < 9 then
-     return fold.up
-   end
+  if remaining_space < 9 then
+    return fold.up
+  end
 
-   return fold.down
+  return fold.down
 end
 
 M.confirm_action = function(handlers)
@@ -77,9 +77,8 @@ M.confirm_action = function(handlers)
       handlers.on_submit(item)
     end,
   })
-  
+
   menu:mount()
-  vim.cmd ":stopinsert"
 
   function map(lhs, rhs)
     vim.api.nvim_buf_set_keymap(
@@ -99,4 +98,3 @@ M.confirm_action = function(handlers)
 end
 
 return M
-
