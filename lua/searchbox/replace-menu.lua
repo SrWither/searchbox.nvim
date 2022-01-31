@@ -25,7 +25,7 @@ local move_screen = function()
   if screen > 13 and screen < 26 then
     vim.cmd('normal! zt')
   else
-    vim.cmd('normal! zt')
+    vim.cmd('normal! zz')
   end
 end
 
@@ -48,7 +48,7 @@ end
 
 M.confirm_action = function(handlers)
   move_screen()
-  popup_options.position.row = get_row()
+  --popup_options.position.row = get_row()
 
   local menu = Menu(popup_options, {
     lines = {
