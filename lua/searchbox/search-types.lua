@@ -351,7 +351,7 @@ M.confirm = function(value, state)
 
     -- move cursor to the new offset column
     -- so next_match doesn't get stuck
-    vim.api.nvim_win_set_cursor(state.winid, {pos.line, (pos.col + value:len()) - 0})
+    vim.api.nvim_win_set_cursor(state.winid, {pos.line, (pos.col + value:len()) - 1})
   end
 
   local cursor_pos = function(pos)
