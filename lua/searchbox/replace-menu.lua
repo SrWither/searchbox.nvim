@@ -5,7 +5,7 @@ local event = require('nui.utils.autocmd').event
 local popup_options = {
   relative = 'cursor',
   position = {
-    row = 0,
+    row = 1,
     col = 0,
   },
   border = {
