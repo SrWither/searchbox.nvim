@@ -47,7 +47,7 @@ local get_row = function()
 end
 
 M.confirm_action = function(handlers)
-  move_screen()
+  --move_screen()
   --popup_options.position.row = get_row()
 
   local menu = Menu(popup_options, {
