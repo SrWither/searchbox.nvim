@@ -25,7 +25,7 @@ local move_screen = function()
   if screen > 13 and screen < 26 then
     vim.cmd('normal! zt')
   else
-    vim.cmd('normal! zz')
+    vim.cmd('normal! zt')
   end
 end
 
