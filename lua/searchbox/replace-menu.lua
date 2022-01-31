@@ -32,7 +32,7 @@ end
 local get_row = function()
   local cursor_line = vim.fn.line('.')
   local first_line = vim.fn.line('w0')
-  local fold = {up = -8, down = 1}
+  local fold = {up = 8, down = -1}
 
   local height = vim.fn.winheight(0)
   local diff_start = cursor_line - first_line
